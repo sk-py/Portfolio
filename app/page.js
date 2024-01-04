@@ -7,9 +7,8 @@ import {
   PiGithubLogoThin,
   PiLinkedinLogoBold,
   PiHandSwipeLeft,
-  PiQuestionBold,
   PiQuestion,
-  PiLightbulbDuotone,
+  PiSpinner,
 } from "react-icons/pi";
 
 import { IoIosMailUnread } from "react-icons/io";
@@ -98,8 +97,12 @@ function Homepage() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     setIsLoading(true);
-    await sendMessage(MessageData);
+    const res = await sendMessage(MessageData);
+    console.log("res", await res.json());
+    setMessageData(initialValue);
+    setIsLoading(false);
   };
 
   return (
@@ -413,6 +416,7 @@ function Homepage() {
               <Tooltip showArrow={true} content="X (Twitter)" color="#161616">
                 <Link
                   href={"https://twitter.com/shaikh597"}
+                  target="_blank"
                   className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
                 >
                   <RiTwitterXLine className="text-xl" />
@@ -421,6 +425,7 @@ function Homepage() {
               <Tooltip showArrow={true} content="GitHub" color="#161616">
                 <Link
                   href={"https://github.com/sk-py"}
+                  target="_blank"
                   className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
                 >
                   <PiGithubLogoThin className="text-xl" />
@@ -429,6 +434,7 @@ function Homepage() {
               <Tooltip showArrow={true} content="LinkedIn" color="#161616">
                 <Link
                   href={"https://www.linkedin.com/in/mubashir-shaikh-/"}
+                  target="_blank"
                   className="rounded-full border dark:border-neutral-600 cursor-pointer border-neutral-400/60 p-2 w-16 h-16 flex items-center justify-center"
                 >
                   <PiLinkedinLogoBold className="text-xl" />
@@ -456,7 +462,7 @@ function Homepage() {
                 }}
                 className="text-neutral-400 items-center cursor-pointer "
               >
-                <PiQuestion className="text-xl" />
+                <PiQuestion title="Tip - Drag gently" className="text-xl " />
               </p>
             </div>
             <div className="w-full h-[0.4px] dark:bg-neutral-600 bg-neutral-400/60 mt-1   " />
@@ -570,7 +576,6 @@ function Homepage() {
                 src="/Sk2.png"
                 alt=""
               />
-
               <div className="">
                 <p className="text-xs">Sk-py</p>
                 <p className="text-xs">A.k.a Mubashir</p>
@@ -662,13 +667,14 @@ function Homepage() {
         </div>
 
         <div className="mt-10 flex flex-col items-center w-full px-2 gap-y-2 ">
-          <span className="flex w-full justify-around">
+          <form className="flex w-full justify-around">
             <input
-              type="email"
+              type="text"
               className="w-[49%] dark:bg-neutral-900 outline-none dark:placeholder:text-neutral-500 placeholder:text-neutral-700 text-sm indent-1 p-1 rounded-lg border border-neutral-600"
-              placeholder="email@example.com"
+              placeholder="Name"
               onChange={handleChange}
               name="email"
+              required={true}
               value={MessageData.email}
               id=""
             />
@@ -677,26 +683,38 @@ function Homepage() {
               className="w-[49%] dark:bg-neutral-900 outline-none dark:placeholder:text-neutral-500 placeholder:text-neutral-700 text-sm indent-1 p-1 rounded-lg border border-neutral-600"
               placeholder="Subject :"
               onChange={handleChange}
+              required={true}
               value={MessageData.subject}
               name="subject"
               id=""
             />
-          </span>
+          </form>
           <textarea
             cols={14}
             rows={4}
             onChange={handleChange}
             value={MessageData.message}
+            required={true}
             name="message"
             className=" scrollbar-hide w-full rounded-xl text-sm p-1 dark:placeholder:text-neutral-500 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60 indent-2 dark:bg-neutral-900"
             type="email"
             placeholder="Message...."
           />
           <button
+            type="submit"
+            disabled={
+              !MessageData.email || !MessageData.subject || !MessageData.message
+            }
             onClick={handleSubmit}
-            className="text-xs  w-full  border dark:border-neutral-600 border-neutral-400/60  my-2  rounded-full p-1 px-2 hover:dark:bg-neutral-600 dark:bg-neutral-700/40"
+            className="text-xs  w-full cursor-pointer  border dark:border-neutral-600 border-neutral-400/60  my-2  rounded-full p-1 px-2 hover:dark:bg-neutral-600 dark:bg-neutral-700/40"
           >
-            <span>Contact me</span>
+            <span className="w-full flex items-center justify-center p-1">
+              {IsLoading ? (
+                <PiSpinner className="animate-spin text-medium" />
+              ) : (
+                "Contact me"
+              )}
+            </span>
           </button>
         </div>
       </div>
