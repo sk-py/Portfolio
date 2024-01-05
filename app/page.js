@@ -9,6 +9,8 @@ import {
   PiHandSwipeLeft,
   PiQuestion,
   PiSpinner,
+  PiArrowDown,
+  PiCheckCircle,
 } from "react-icons/pi";
 
 import { IoIosMailUnread } from "react-icons/io";
@@ -22,6 +24,7 @@ import { Tooltip } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 import { sendMessage } from "./lib/requesthandler";
+import Resume from "./Resume/page";
 
 const skillsArray = [
   "React",
@@ -78,7 +81,7 @@ const sideProjects = [
 
 function Homepage() {
   const { theme } = useTheme();
-  const [Open, setOpen] = useState("");
+  const [Open, setOpen] = useState(false);
   const [IsLoading, setIsLoading] = useState(false);
   const constraintRef = useRef(null);
   const initialValue = {
@@ -100,13 +103,25 @@ function Homepage() {
     e.preventDefault();
     setIsLoading(true);
     const res = await sendMessage(MessageData);
-    console.log("res", await res.json());
+    if (res.status === 200) {
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 3000);
+    }
     setMessageData(initialValue);
     setIsLoading(false);
   };
 
+  const scrolltoHash = function (element_id) {
+    const element = document.getElementById(element_id);
+    element?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className=" w-full  px-4 pt-8 max-w-6xl mx-auto">
+    <div className=" w-full  px-4 pt-8 max-w-6xl mx-auto relative ">
       <div className="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-2 gap-5 grid-flow-row-dense">
         <motion.div
           drag
@@ -145,17 +160,19 @@ function Homepage() {
                 </span>
               </div>
             </div>
-            <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-4  " />
-            <div className="">
-              <p className="text-xs font-semibold max-sm:mt-4 mt-2">
-                New opportunities are welcomed, and I am ready and available for
-                work.
+            <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 sm:mt-1 top-4  " />
+            <div className="w-full h-full flex items-center justify-center flex-col">
+              <p className="text-xs font-semibold max-sm:mt-0 mt-2">
+                New opportunities are welcomed, and I'm available for work.
                 <br /> Feel free to reach out and connect with me!
               </p>
 
-              <button className="text-xs flex w-full items-center justify-between border hover:bg-slate-100 dark:hover:bg-zinc-700 dark:border-neutral-600 border-neutral-400/60  mt-3 rounded-full p-1 px-2 dark:bg-neutral-700/40 sm:w-full">
+              <button
+                onClick={() => scrolltoHash("contactMe")}
+                className="text-xs flex w-full items-center justify-between border hover:bg-slate-100 dark:hover:bg-zinc-700 dark:border-neutral-600 border-neutral-400/60  mt-3 max-sm:mt-2 rounded-full p-1 mb-1 px-2 dark:bg-neutral-700/40 sm:w-full"
+              >
                 <span>Contact me</span>
-                <PiArrowUpRight />
+                <PiArrowDown />
               </button>
             </div>
           </div>
@@ -456,12 +473,7 @@ function Homepage() {
           <div className=" w-full px-2 z-10">
             <div className="flex justify-between items-center ">
               <p className="text-xs ml-1">Side projects</p>
-              <p
-                onClick={() => {
-                  setOpen(!Open);
-                }}
-                className="text-neutral-400 items-center cursor-pointer "
-              >
+              <p className="text-neutral-400 items-center cursor-pointer ">
                 <PiQuestion title="Tip - Drag gently" className="text-xl " />
               </p>
             </div>
@@ -526,9 +538,9 @@ function Homepage() {
             className="w-full h-full flex items-center justify-center  "
           >
             <Image
-              width={300}
-              height={300}
-              className=" duration-300 dark:hover:bg-white dark:hover:p-20 dark:hover:rounded-md hover:scale-110 cursor-pointer transition-all ease-in-out object-cover"
+              width={350}
+              height={350}
+              className="duration-300 dark:hover:bg-white dark:hover:p-20 dark:hover:rounded-md hover:scale-110 cursor-pointer transition-all ease-in-out object-cover"
               src={"/next.svg"}
               alt=""
             />
@@ -640,14 +652,14 @@ function Homepage() {
               })}
             </div>
           </motion.div>
-          <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg lg:h-fit h-full p-2 relative z-40">
+          <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 overflow-y-scroll scrollbar-hide border-neutral-400/60 shadow-xl rounded-lg lg:h-44 h-48 p-2 relative z-40">
             <div>
               <div className=" absolute w-full p-2 z-20">
-                <p className="text-xs">CV</p>
+                <p className="text-xs">Resume</p>
                 <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
               </div>
             </div>
-            <div className="mt-24 w-full">
+            {/* <div className="mt-24 w-full">
               <button className="text-xs flex w-full items-center justify-between border dark:border-neutral-600 border-neutral-400/60   rounded-full p-1 px-2 dark:bg-neutral-700/40">
                 <span>View</span>
                 <PiArrowUpRight />
@@ -656,11 +668,14 @@ function Homepage() {
                 <span>Download</span>
                 <PiArrowDownThin />
               </button>
+            </div> */}
+            <div className="mt-8 h-fit overflow-y-scroll scrollbar-hide">
+              <Resume />
             </div>
           </div>
         </div>
       </div>
-      <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl mt-2 rounded-lg z-20 h-max relative">
+      <div className="dark:bg-[#222222] bg-white border dark:border-neutral-500 border-neutral-400/60 shadow-xl mt-2 rounded-lg z-20 h-max relative">
         <div className=" absolute w-full p-2 z-20">
           <p className="text-xs">Any Queries..?</p>
           <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 top-7  " />
@@ -670,8 +685,8 @@ function Homepage() {
           <form className="flex w-full justify-around">
             <input
               type="text"
-              className="w-[49%] dark:bg-neutral-900 outline-none dark:placeholder:text-neutral-500 placeholder:text-neutral-700 text-sm indent-1 p-1 rounded-lg border border-neutral-600"
-              placeholder="Name"
+              className="w-[49%] dark:bg-neutral-900  bg-neutral-100 outline-none dark:placeholder:text-neutral-500 placeholder:text-neutral-700 text-sm indent-1 p-1 rounded-lg border border-neutral-600"
+              placeholder="Email or name (prefer email)"
               onChange={handleChange}
               name="email"
               required={true}
@@ -680,7 +695,7 @@ function Homepage() {
             />
             <input
               type="text"
-              className="w-[49%] dark:bg-neutral-900 outline-none dark:placeholder:text-neutral-500 placeholder:text-neutral-700 text-sm indent-1 p-1 rounded-lg border border-neutral-600"
+              className="w-[49%] dark:bg-neutral-900 bg-neutral-100  outline-none dark:placeholder:text-neutral-500 placeholder:text-neutral-700 text-sm indent-1 p-1 rounded-lg border border-neutral-600"
               placeholder="Subject :"
               onChange={handleChange}
               required={true}
@@ -696,7 +711,7 @@ function Homepage() {
             value={MessageData.message}
             required={true}
             name="message"
-            className=" scrollbar-hide w-full rounded-xl text-sm p-1 dark:placeholder:text-neutral-500 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60 indent-2 dark:bg-neutral-900"
+            className=" scrollbar-hide w-full rounded-xl text-sm p-1  bg-neutral-100 dark:placeholder:text-neutral-500 placeholder:text-neutral-700 outline-none border dark:border-neutral-600 border-neutral-400/60 indent-2 dark:bg-neutral-900"
             type="email"
             placeholder="Message...."
           />
@@ -708,7 +723,10 @@ function Homepage() {
             onClick={handleSubmit}
             className="text-xs  w-full cursor-pointer  border dark:border-neutral-600 border-neutral-400/60  my-2  rounded-full p-1 px-2 hover:dark:bg-neutral-600 dark:bg-neutral-700/40"
           >
-            <span className="w-full flex items-center justify-center p-1">
+            <span
+              id="contactMe"
+              className="w-full flex items-center justify-center p-1"
+            >
               {IsLoading ? (
                 <PiSpinner className="animate-spin text-medium" />
               ) : (
@@ -718,6 +736,11 @@ function Homepage() {
           </button>
         </div>
       </div>
+      {Open && (
+        <span className="sticky bg-black border border-neutral-500 dark:bg-white dark:text-black dark:font-bold  text-white items-center text-sm gap-2 rounded-lg px-6 w-max bottom-1 my-2 flex lg:left-[45%] md:left-[39%] left-[29%]  z-50 p-2">
+          <PiCheckCircle className="text-xl" /> Sent Successfully
+        </span>
+      )}
     </div>
   );
 }

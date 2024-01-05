@@ -173,10 +173,10 @@ function HeaderPage() {
 
         <div>
           <Link
-            href={"#"}
-            className="flex w-40 items-center justify-between border border-neutral-600 rounded-full p-2 px-5"
+            href={"https://www.canva.com/design/DAFz93fvUzY/view"}
+            className="flex w-44 items-center justify-between border border-neutral-600 rounded-full p-2 px-5"
           >
-            <span className="text-xs">Get my resume</span>
+            <span className="text-xs">View resume@latest</span>
             <PiArrowRightThin />
           </Link>
         </div>
