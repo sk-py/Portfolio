@@ -4,6 +4,7 @@ export const POST = async (request) => {
   if (!data.email || !data.subject || !data.message) {
     return Response.json({ message: "Bad request" });
   }
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {

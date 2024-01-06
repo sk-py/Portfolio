@@ -573,12 +573,7 @@ function Homepage() {
             </button>
           </div>
         </div> */}
-        <motion.div
-          drag
-          dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
-          dragElastic={1}
-          className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44  p-2"
-        >
+        <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 border-neutral-400/60 shadow-xl rounded-lg h-44  p-2">
           <div>
             <div className="flex items-center gap-x-2 mt-3">
               <Image
@@ -590,16 +585,19 @@ function Homepage() {
               />
               <div className="">
                 <p className="text-xs">Sk-py</p>
-                <p className="text-xs">A.k.a Mubashir</p>
+                {/* <p className="text-xs">A.k.a Mubashir</p> */}
               </div>
             </div>
             <p className="text-xs mt-3">
-              Whether you're here for the code, curious about collaboration, or
-              you're on the lookout for a passionate developer, you're in the
-              right place! Feel free to reach out😉
+              Lorem, ipsum{" "}
+              <b>
+                Hey there! This is just some random text. Any clever suggestions
+                to add a dash of excitement to this space?{" "}
+              </b>
+              Maybe the next one would be useful for you.
             </p>
           </div>
-        </motion.div>
+        </div>
         <motion.div
           drag
           dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}

@@ -125,7 +125,11 @@ const HeaderPage = () => {
         </motion.header>
       </AnimatePresence>
 
-      <nav className="flex justify-between items-center w-full  px-4 pt-10 max-w-6xl mx-auto">
+      <nav
+        className={`flex ${
+          path === "/Resume" && "flex-row-reverse"
+        }  justify-between items-center w-full  px-4 pt-10 max-w-6xl mx-auto`}
+      >
         <div className="flex gap-x-3 items-center">
           <Image
             width={300}
