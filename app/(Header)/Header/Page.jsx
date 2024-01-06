@@ -1,16 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useCycle } from "framer-motion";
-
 import { useState } from "react";
 
 import { useTheme } from "next-themes";
-import { PiArrowRightThin } from "react-icons/pi";
+import { PiArrowLeftThin, PiArrowRightThin } from "react-icons/pi";
 import Image from "next/image";
+import { PathNameContext } from "@/components/providers/Theme";
 
-function HeaderPage() {
+const HeaderPage = () => {
+  const path = useContext(PathNameContext);
   const [open, cycleOpen] = useCycle(false, true);
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,28 +24,6 @@ function HeaderPage() {
     { name: "/system.png", theme: "system" },
   ];
 
-  const itemVariants = {
-    closed: {
-      opacity: 0,
-    },
-    open: { opacity: 1 },
-  };
-
-  const sideVariants = {
-    closed: {
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1,
-      },
-    },
-    open: {
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: 1,
-      },
-    },
-  };
-
   const ButtonVariant = {
     closed: {
       height: "1.6rem",
@@ -54,15 +33,6 @@ function HeaderPage() {
     open: {
       height: "3.7rem",
       transition: { when: "beforeChildren", duration: 0.4 },
-    },
-  };
-
-  let textvariant = {
-    hidden: {
-      opacity: 0,
-    },
-    show: {
-      opacity: 1,
     },
   };
 
@@ -173,11 +143,15 @@ function HeaderPage() {
 
         <div>
           <Link
-            href={"https://www.canva.com/design/DAFz93fvUzY/view"}
+            // href={"https://www.canva.com/design/DAFz93fvUzY/view"}
+            href={`${path === "/Resume" ? "/" : "/Resume"}`}
             className="flex w-44 items-center justify-between border border-neutral-600 rounded-full p-2 px-5"
           >
-            <span className="text-xs">View resume@latest</span>
-            <PiArrowRightThin />
+            {path === "/Resume" && <PiArrowLeftThin />}
+            <span className="text-xs">
+              {path == "/Resume" ? "Back to Homepage" : "View resume@latest"}
+            </span>
+            {path !== "/Resume" && <PiArrowRightThin />}
           </Link>
         </div>
       </nav>
@@ -187,6 +161,6 @@ function HeaderPage() {
       </div>
     </div>
   );
-}
+};
 
 export default HeaderPage;

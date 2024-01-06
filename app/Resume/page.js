@@ -1,9 +1,13 @@
 "use client";
 import React from "react";
 
-const Resume = () => {
+const Resume = ({ width, lgWidth }) => {
   return (
-    <div className="lg:w-[80%] w-[85%] mx-auto">
+    <div
+      className={`${lgWidth ? lgWidth : "lg:w-[65%]"}  ${
+        width ? width : "w-[80%]"
+      } mx-auto`}
+    >
       <div
         style={{
           position: "relative",

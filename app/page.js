@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, use } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   PiArrowUpRight,
@@ -162,7 +162,7 @@ function Homepage() {
             </div>
             <div className="w-full h-[0.9px] dark:bg-neutral-600 bg-neutral-400/60 mt-1 sm:mt-1 top-4  " />
             <div className="w-full h-full flex items-center justify-center flex-col">
-              <p className="text-xs font-semibold max-sm:mt-0 mt-2">
+              <p className="text-xs font-semibold max-sm:mt-1 mt-2">
                 New opportunities are welcomed, and I'm available for work.
                 <br /> Feel free to reach out and connect with me!
               </p>
@@ -652,7 +652,7 @@ function Homepage() {
               })}
             </div>
           </motion.div>
-          <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 overflow-y-scroll scrollbar-hide border-neutral-400/60 shadow-xl rounded-lg lg:h-44 h-48 p-2 relative z-40">
+          <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 overflow-y-scroll scrollbar-hide border-neutral-400/60 shadow-xl rounded-lg lg:h-44 md:h-44 h-48 p-2 relative z-40">
             <div>
               <div className=" absolute w-full p-2 z-20">
                 <p className="text-xs">Resume</p>
@@ -670,8 +670,22 @@ function Homepage() {
               </button>
             </div> */}
             <div className="mt-8 h-fit overflow-y-scroll scrollbar-hide">
-              <Resume />
+              <Resume width={"85%"} lgWidth={"85%"} />
             </div>
+            <Link
+              href={"/Resume"}
+              className="text-xs mb-1 w-full flex items-center p-1 text-black dark:text-neutral-50 bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-600 dark:hover:bg-neutral-500 rounded-xl cursor-pointer justify-center "
+            >
+              View
+            </Link>
+            <Link
+              href={
+                "https://drive.google.com/uc?export=download&id=1QEXv5aDfC71ZOg0esy56HLKHWwdy6dS6"
+              }
+              className="text-xs w-full flex items-center p-1 text-black dark:text-neutral-50 bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-600 dark:hover:bg-neutral-500 rounded-xl cursor-pointer justify-center "
+            >
+              Download
+            </Link>
           </div>
         </div>
       </div>
@@ -721,7 +735,7 @@ function Homepage() {
               !MessageData.email || !MessageData.subject || !MessageData.message
             }
             onClick={handleSubmit}
-            className="text-xs  w-full cursor-pointer  border dark:border-neutral-600 border-neutral-400/60  my-2  rounded-full p-1 px-2 hover:dark:bg-neutral-600 dark:bg-neutral-700/40"
+            className="text-xs  w-full cursor-pointer  border dark:border-neutral-600 border-neutral-400/60  my-2  rounded-full p-1 px-2 hover:bg-neutral-100 hover:dark:bg-neutral-600 dark:bg-neutral-700/40"
           >
             <span
               id="contactMe"
