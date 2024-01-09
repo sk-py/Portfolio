@@ -19,7 +19,7 @@ const HeaderPage = () => {
   const { theme, systemTheme, setTheme } = useTheme();
 
   const links = [
-    { name: "/dark.png", theme: "dark" },
+    { name: "/Dark.png", theme: "dark" },
     { name: "/Light.png", theme: "light" },
     { name: "/system.png", theme: "system" },
   ];
