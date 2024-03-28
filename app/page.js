@@ -623,7 +623,10 @@ function Homepage() {
             <p className="text-xs mt-3">
               Whether you're here for the code, curious about collaboration, or
               you're on the lookout for a passionate developer, you're in the
-              right place! Feel free to reach out😉
+              right place! Feel free to reach out
+              <a href="https://docs.google.com/spreadsheets/d/1VaSy38rZzTQ_Vel3TeDVeD1Snmxn_RU3Alu3k5vjWO8/edit?usp=sharing">
+                😉
+              </a>
             </p>
           </div>
         </motion.div>
