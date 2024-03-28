@@ -24,7 +24,7 @@ import { Tooltip } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 import { sendMessage } from "./lib/requesthandler";
-import { Resume } from "./Resume/page";
+import Resume from "./Resume/page";
 
 const skillsArray = [
   "React",
