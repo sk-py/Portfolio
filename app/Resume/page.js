@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const Resume = ({ width, lgWidth }) => {
+export const Resume = ({ width, lgWidth }) => {
   return (
     <div
       className={`${lgWidth ? lgWidth : "lg:w-[65%]"}  ${
@@ -51,5 +51,3 @@ const Resume = ({ width, lgWidth }) => {
     </div>
   );
 };
-
-export default Resume;
