@@ -24,7 +24,8 @@ import { Tooltip } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 import { sendMessage } from "./lib/requesthandler";
-import Resume from "./Resume/page";
+import ResumeComponent from "./components/ResumeComponent";
+// import Resume from "./Resume/page";
 
 const skillsArray = [
   "React",
@@ -668,7 +669,8 @@ function Homepage() {
               </button>
             </div> */}
             <div className="mt-8 h-fit overflow-y-scroll scrollbar-hide">
-              <Resume width={"85%"} lgWidth={"85%"} />
+              {/* <Resume width={"85%"} lgWidth={"85%"} /> */}
+              <ResumeComponent />
             </div>
             <Link
               href={"/Resume"}

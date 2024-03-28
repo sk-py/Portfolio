@@ -1,9 +1,6 @@
-"use client";
-import React from "react";
-
-const Resume = () => {
+const ResumeComponent = () => {
   return (
-    <div className="lg:w-[65%] mx-auto">
+    <div className="lg:w-[80%] mx-auto">
       <div
         style={{
           position: "relative",
@@ -48,4 +45,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default ResumeComponent;
