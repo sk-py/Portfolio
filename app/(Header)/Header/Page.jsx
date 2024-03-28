@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import { PiArrowLeftThin, PiArrowRightThin } from "react-icons/pi";
 import Image from "next/image";
-import { PathNameContext } from "@/components/providers/Theme";
+import { PathNameContext } from "../../../components/providers/Theme";
 
 const HeaderPage = () => {
   const path = useContext(PathNameContext);
@@ -17,7 +17,6 @@ const HeaderPage = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoverTheme, setHovertheme] = useState(null);
   const { theme, systemTheme, setTheme } = useTheme();
-
   const links = [
     { name: "/Dark.png", theme: "dark" },
     { name: "/Light.png", theme: "light" },
@@ -59,7 +58,7 @@ const HeaderPage = () => {
   {
     /* DF1B89 */
   }
-  return (
+  return path == "/Admin" ? null : (
     <div className="">
       <AnimatePresence>
         <motion.header
@@ -130,7 +129,7 @@ const HeaderPage = () => {
           path === "/Resume" && "flex-row-reverse"
         }  justify-between items-center w-full  px-4 pt-10 max-w-6xl mx-auto`}
       >
-        <div className="flex gap-x-3 items-center">
+        <Link href={"/Admin"} className="flex gap-x-3 items-center">
           <Image
             width={300}
             height={300}
@@ -143,7 +142,7 @@ const HeaderPage = () => {
             <h4 className="text-xs ">Mubashir Shaikh</h4>
             <p className="text-[#828282] text-xs">Software Developer</p>
           </div>
-        </div>
+        </Link>
 
         <div>
           <Link
