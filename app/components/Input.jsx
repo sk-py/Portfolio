@@ -1,7 +1,7 @@
 const Input = () => {
   return (
     <div>
-      <section className="bg-transparent backdrop-blur-sm lg:backdrop-blur-3xl rounded-xl z-10 m-auto  ">
+      <section className="bg-transparent backdrop-saturate-150  backdrop-blur-sm lg:backdrop-blur-3xl rounded-xl z-10 m-auto  ">
         <div className="max-w-3xl px-6 py-16 mx-auto text-center">
           <h1 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
             <svg
@@ -12,10 +12,10 @@ const Input = () => {
             >
               <path d="M192 64C86 64 0 150 0 256S86 448 192 448H448c106 0 192-86 192-192s-86-192-192-192H192zM496 168a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H216v32c0 13.3-10.7 24-24 24s-24-10.7-24-24V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V200z" />
             </svg>
-            Control Center{" "}
+            Towards Control Center{" "}
           </h1>
           <p className="max-w-md mx-auto mt-5 text-gray-500 dark:text-gray-300 ">
-            Not actually a control center, just some useful(to me) links !{" "}
+            Not actually a control center, just some useful(to me) links!{" "}
             {/* <img
               className="h-6 w-6"
               src="https://cdn-icons-png.flaticon.com/512/260/260221.png"
