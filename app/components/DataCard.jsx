@@ -4,7 +4,7 @@ const DataCard = ({ Title, Content, link }) => {
   return (
     <div>
       <div className="flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-md rounded-xl dark:bg-neutral-900 dark:border-gray-700 dark:border-t-blue-800 dark:shadow-slate-700/[.7]">
-        <div className="p-4 md:p-5">
+        <div className="p-4 md:p-5 w-min">
           <h3 className="text-lg font-bold text-gray-800 dark:text-white border-b border-b-zinc-700 ">
             {Title}
           </h3>

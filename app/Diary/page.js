@@ -1,7 +1,23 @@
 import DataCard from "../components/DataCard";
 
 const page = () => {
-  const arr = [1, 2, 3, 4, 5];
+  const arr = [
+    {
+      title: "Payment Sheet",
+      content: "Google sheet containing dates and other details of work",
+      link: "https://docs.google.com/spreadsheets/d/1VaSy38rZzTQ_Vel3TeDVeD1Snmxn_RU3Alu3k5vjWO8/edit?usp=sharing",
+    },
+    {
+      title: "Android Dev Answers ChatGpt",
+      content: "Chats done with chatGpt for generating android dev practical",
+      link: "https://chat.openai.com/share/61081a03-42ae-4c4a-ba6f-e7b3279d1cc0",
+    },
+    {
+      title: "Payment Sheet",
+      content: "Google drive folder for notes of all Sems",
+      link: "https://drive.google.com/drive/folders/1M_AZyQFvonhopHq04_tKtReh9ZpBCZkA?usp=sharing",
+    },
+  ];
   return (
     <div className="min-h-screen ">
       {/* Card Section */}
@@ -12,11 +28,9 @@ const page = () => {
           {arr.map((item, index) => {
             return (
               <DataCard
-                Title={"Card title"}
-                Content={
-                  "lorem ispum sdolor ismet afstsabh hasbjhuas sauhusant hyanj sah ubjn hjns"
-                }
-                link={"https://dealio.wuaze.com"}
+                Title={item.title}
+                Content={item.content}
+                link={item.link}
                 key={index}
               />
             );
