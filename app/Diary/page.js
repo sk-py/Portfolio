@@ -13,7 +13,7 @@ const page = () => {
       link: "https://chat.openai.com/share/61081a03-42ae-4c4a-ba6f-e7b3279d1cc0",
     },
     {
-      title: "Payment Sheet",
+      title: "G-Drive Notes Link",
       content: "Google drive folder for notes of all Semester",
       link: "https://drive.google.com/drive/folders/1M_AZyQFvonhopHq04_tKtReh9ZpBCZkA?usp=sharing",
     },
