@@ -14,7 +14,7 @@ const page = () => {
     },
     {
       title: "Payment Sheet",
-      content: "Google drive folder for notes of all Sems",
+      content: "Google drive folder for notes of all Semester",
       link: "https://drive.google.com/drive/folders/1M_AZyQFvonhopHq04_tKtReh9ZpBCZkA?usp=sharing",
     },
   ];
