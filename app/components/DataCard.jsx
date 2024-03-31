@@ -10,7 +10,7 @@ const DataCard = ({ Title, Content, link }) => {
         <p className="mt-2 text-gray-500 dark:text-gray-400">{Content}</p>
         <a
           className="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-          href="#"
+          href={link}
         >
           {link}
           <svg
