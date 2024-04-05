@@ -624,7 +624,7 @@ function Homepage() {
               Whether you're here for the code, curious about collaboration, or
               you're on the lookout for a passionate developer, you're in the
               right place! Feel free to reach out
-              <a href="https://docs.google.com/spreadsheets/d/1VaSy38rZzTQ_Vel3TeDVeD1Snmxn_RU3Alu3k5vjWO8/edit?usp=sharing">
+              <a href="https://drive.google.com/file/d/1TxWOsfCGHmrp1r67YYj_8GexbPN1mB2X/view?usp=sharing">
                 😉
               </a>
             </p>
