@@ -17,6 +17,12 @@ const page = () => {
       content: "Google drive folder for notes of all Semester",
       link: "https://drive.google.com/drive/folders/1M_AZyQFvonhopHq04_tKtReh9ZpBCZkA?usp=sharing",
     },
+       {
+      title: "G-Drive Android PDF Link",
+      content: "Google drive folder for Android Ans PDF",
+      link: "https://drive.google.com/file/d/1TxWOsfCGHmrp1r67YYj_8GexbPN1mB2X/view?usp=sharing",
+    },
+    
   ];
   return (
     <div className="min-h-screen ">
