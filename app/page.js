@@ -45,7 +45,7 @@ const skillsArray = [
 const sideProjects = [
   {
     avatar: "/MoviePass.png",
-    link: "https://github.com/sk-py/Asp.net-Movie",
+    link: "https://drive.google.com/file/d/1oDxp8oRBh20pQYZ0Qvi4L_x2R_LgPlJd/view?usp=sharing",
     description:
       " MoviePass.com is a user-friendly movie seat booking platform with secure authentication, sleek modern UI, responsive design, dynamic real-time data using MS SQL, seamless seat selection, integrated payment methods, and QR code generation for efficient ticket retrieval ",
   },
