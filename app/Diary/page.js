@@ -22,6 +22,11 @@ const page = () => {
       content: "Google drive folder for Android Ans PDF",
       link: "https://drive.google.com/file/d/1TxWOsfCGHmrp1r67YYj_8GexbPN1mB2X/view?usp=sharing",
     },
+        {
+      title: "G-Drive All SEM-VI Notes PDF Link",
+      content: "Google drive folder for SEM VI Complete",
+      link: "https://drive.google.com/drive/folders/0B4oElYNhW0StfkNCUlZLcGExXzVmOXY2cXBrdjZCTlZUc002RkxHYmFVZ01zYnp4VlNvZEU?resourcekey=0-pbqY-zaI-ehOV0WkryufuA&usp=drive_link",
+    },
     
   ];
   return (
