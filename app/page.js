@@ -595,7 +595,7 @@ function Homepage() {
                 Hey there! This is just some random text. Any clever suggestions
                 to add a dash of excitement to this space?{" "}
               </b>
-              https://chat.openai.com/share/61081a03-42ae-4c4a-ba6f-e7b3279d1cc0
+              
             </p>
           </div>
         </div>
