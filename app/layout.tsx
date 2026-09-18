@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/layout/theme-switch";
 import Footer from "@/components/layout/footer";
 import Theming from "@/components/providers/theme-provider";
+import { ReactNode } from "react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,9 +54,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "cAEUD5tUkBH5apNXsw2QlpVeJFLnRg-xBlu5vm0UnEw"
+  }
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
