@@ -110,7 +110,7 @@ const aboutParagraphs = [
 
 const experienceData = [
   {
-    logo: "/images/actify.jfif",
+    logo: "/images/actify.jpg",
     organization: "Actify Inc",
     period: "May 2024 to Jul 2026",
     role: "Software Developer",
@@ -126,7 +126,7 @@ const experienceData = [
       "Worked with an international freelancing team on short-term website projects and gained practical exposure to WordPress and client-driven delivery.",
   },
   {
-    logo: "/images/tcr.jfif",
+    logo: "/images/tcr.jpg",
     organization: "TCR Innovation",
     period: "Aug to Dec 2023",
     role: "Full Stack Development Intern / Trainee",
@@ -339,7 +339,7 @@ export default function Homepage() {
         <div className="relative h-72 overflow-hidden rounded-lg border border-neutral-400/60 bg-white shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e] sm:col-span-2">
           <SectionHeader title="Currently learning" detail="Docker, Kubernetes, platform engineering" />
           <Link href="https://www.docker.com/resources/kubernetes-and-docker/" target="_blank" rel="noreferrer" className="flex h-full flex-col items-center justify-center gap-4 px-5 pt-7 text-center">
-            <Image width={250} height={250} loading="eager" className="duration-300 size-auto hover:scale-110 cursor-pointer transition-all ease-in-out object-cover" src="/images/docker-engine-kubernetes.avif" alt="Kubernetes" />
+            <Image width={250} height={250} loading="eager" className="duration-300 hover:scale-110 cursor-pointer transition-all ease-in-out object-cover" src="/images/docker-engine-kubernetes.avif" alt="Kubernetes" />
             <p className="max-w-md text-xs leading-5 text-neutral-500 dark:text-neutral-400">
               Going deeper into containers, Kubernetes, deployment workflows, observability, and the infrastructure needed to run applications reliably.
             </p>
@@ -374,17 +374,33 @@ export default function Homepage() {
             </div>
           </div>
 
-          <div className="dark:bg-[#1E1E1E] bg-white border dark:border-neutral-600 overflow-y-scroll scrollbar-thin scrollbar-thumb-accent-foreground border-neutral-400/60 shadow-xl rounded-lg lg:h-44 md:h-44 h-48 p-2 relative z-40">
+          <div className="dark:bg-[#1E1E1E] group bg-white border dark:border-neutral-600 overflow-hidden shadow-xl rounded-lg lg:h-44 md:h-44 h-48 p-1 flex flex-col relative z-40">
             <SectionHeader title="Resume" />
-            <div className="mt-8 h-fit overflow-y-scroll scrollbar-none">
-              <ResumeComponent />
+
+            <Link href={"/resume"} className=" flex-1 mt-10 mb-2 relative w-full overflow-hidden rounded border border-neutral-200 dark:border-neutral-700 cursor-pointer">
+              <Image
+                src="/images/resume-thumb.jpg"
+                alt="Resume Thumbnail"
+                sizes="auto"
+                fill
+                className="object-cover object-top opacity-80 transition-all duration-[1500ms] ease-in-out group-hover:object-bottom group-hover:opacity-100"
+              />
+            </Link>
+
+            <div className="flex gap-2 shrink-0">
+              <Link
+                href="/resume"
+                className="text-xs w-full flex items-center p-1.5 font-medium text-black dark:text-neutral-50 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600 rounded-lg cursor-pointer justify-center transition-colors"
+              >
+                View
+              </Link>
+              <a
+                href="https://drive.google.com/uc?export=download&id=1iE0OXy69bc64Dv0Sukvc3NK6ZAiWy0Wt"
+                className="text-xs w-full flex items-center p-1.5 font-medium text-black dark:text-neutral-50 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600 rounded-lg cursor-pointer justify-center transition-colors"
+              >
+                Download
+              </a>
             </div>
-            <Link href="/resume" className="text-xs mb-1 w-full flex items-center p-1 text-black dark:text-neutral-50 bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-600 dark:hover:bg-neutral-500 rounded-xl cursor-pointer justify-center">
-              View
-            </Link>
-            <Link href="https://drive.google.com/uc?export=download&id=1iE0OXy69bc64Dv0Sukvc3NK6ZAiWy0Wt" className="text-xs w-full flex items-center p-1 text-black dark:text-neutral-50 bg-neutral-300 hover:bg-neutral-400 dark:bg-neutral-600 dark:hover:bg-neutral-500 rounded-xl cursor-pointer justify-center">
-              Download
-            </Link>
           </div>
         </div>
       </div>

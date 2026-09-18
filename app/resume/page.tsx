@@ -1,48 +1,32 @@
 const ResumeRoute = () => {
+    const fileId = "1WQkzS4wlrubxwBggfenjiy6KTDN4zWyw";
+    const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
     return (
-        <div className="lg:w-[65%] mx-auto">
-            <div
-                style={{
-                    position: "relative",
-                    width: "100%",
-                    height: 0,
-                    paddingTop: "141.4286%",
-                    paddingBottom: 0,
-                    boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
-                    marginTop: "1.6em",
-                    marginBottom: "0.9em",
-                    overflow: "hidden",
-                    borderRadius: "8px",
-                    willChange: "transform",
-                }}
-            >
+        <div className="lg:w-[65%] mx-auto mt-6 mb-4">
+            {/* Aspect ratio wrapper for standard A4 document (141.42%) */}
+            <div className="relative w-full h-0 pb-[100%] overflow-hidden rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700">
                 <iframe
                     loading="lazy"
-                    style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100%",
-                        top: 0,
-                        left: 0,
-                        border: "none",
-                        padding: 0,
-                        margin: 0,
-                    }}
-                    src="https://www.canva.com/design/DAFz93fvUzY/view?embed"
+                    className="absolute top-0 left-0 w-full h-full border-none"
+                    src={embedUrl}
                     allowFullScreen
-                    allow="fullscreen"
+                    title="Mubashir Shaikh Resume"
                 ></iframe>
             </div>
-            {/* <a
-        href="https://www.canva.com/design/DAFz93fvUzY/view?utm_content=DAFz93fvUzY&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-        target="_blank"
-        rel="noopener"
-      >
-        Final Resume
-      </a>
-      by shaikh */}
+
+            <div className="mt-4 flex justify-center">
+                <a
+                    href={downloadUrl}
+                    className="flex items-center gap-2 rounded-full border border-neutral-400/60 bg-neutral-100 px-4 py-2 text-xs font-semibold text-black transition-colors hover:bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700"
+                >
+                    Download Resume
+                </a>
+            </div>
         </div>
     )
 }
 
-export default ResumeRoute
+export default ResumeRoute;
