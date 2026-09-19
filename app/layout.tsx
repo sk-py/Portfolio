@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Header from "@/components/layout/theme-switch";
+import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Theming from "@/components/providers/theme-provider";
 import { ReactNode } from "react";

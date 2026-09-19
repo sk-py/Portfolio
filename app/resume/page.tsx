@@ -5,9 +5,9 @@ const ResumeRoute = () => {
     const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
     return (
-        <div className="lg:w-[65%] mx-auto mt-6 mb-4">
+        <div className="lg:w-[65%] w-11/12 mx-auto mt-6 mb-4">
             {/* Aspect ratio wrapper for standard A4 document (141.42%) */}
-            <div className="relative w-full h-0 pb-[100%] overflow-hidden rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700">
+            <div className="relative w-full h-0 pb-[125%] sm:pb-[100%] overflow-hidden rounded-lg shadow-lg border border-neutral-200 dark:border-neutral-700">
                 <iframe
                     loading="lazy"
                     className="absolute top-0 left-0 w-full h-full border-none"
