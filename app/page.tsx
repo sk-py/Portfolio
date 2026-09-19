@@ -4,7 +4,6 @@ import { IoIosMailUnread } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import ResumeComponent from "@/components/custom/resume-component";
 import SectionHeader from "@/components/custom/section-header";
 import About from "@/components/home/about-dialog";
 import ContactForm from "@/components/home/contact-form";
@@ -31,14 +30,14 @@ const skillsArray = [
 const sideProjects = [
   {
     avatar: "/images/MoviePass.png",
-    link: "https://drive.google.com/file/d/1oDxp8oRBh20pQYZ0Qvi4L_x2R_LgPlJd/view?usp=sharing",
+    link: "https://youtu.be/o6pAryubI1s?si=MHSIxMMKkd8c3F4j",
     title: "MoviePass",
     description:
       "Movie seat booking platform with authentication, responsive UI, live seat availability, MS SQL data, payment integration, and QR-based ticket retrieval.",
   },
   {
     avatar: "/images/Proptiger.png",
-    link: "https://github.com/sk-py/Proptiger",
+    link: "https://proptiger.vercel.app/",
     title: "Proptiger",
     description:
       "React project using client-side routing to connect property buyers with channel partners based on their requirements.",
@@ -88,7 +87,7 @@ const featuredWork = [
     title: "Actify GeoTrack",
     link: "https://apps.apple.com/in/app/actify-geotrack/id6742871082",
     description:
-      "Production mobile app for HRMS attendance workflows using geo-location and QR-based attendance, approvals, and HR portal integration. Adopted by MSMEs.",
+      "Production mobile app with 100+ Play Store downloads for HRMS attendance workflows, geo-location and QR-based attendance, approvals, and HR portal integration.",
     stack: "React Native • Expo • REST APIs • Geo-location • QR",
   },
   {
@@ -101,10 +100,31 @@ const featuredWork = [
   },
 ] as const;
 
-const aboutParagraphs = [
-  "I started building websites in college by manually listing products in HTML. That led me toward backend development, databases, and eventually full-stack applications. I moved from small PHP projects to marketplace ideas such as Swappify and Dealio, then into the MERN stack and production development.",
-  "From there I explored REST APIs, real-time applications with Socket.io, and React Native with Expo. Building backend systems from scratch in hackathons and personal projects helped me understand how the UI, APIs, databases, background jobs, and infrastructure fit together rather than treating them as separate pieces.",
-  "More recently, my work has expanded into Next.js, PostgreSQL, Redis, AI-powered systems, vector search, Linux deployments, Nginx, Azure, CI/CD, Docker, and secure server access with Tailscale. Alongside product work, I have been building and open-sourcing infrastructure-focused projects such as Bastion.",
+const aboutMilestones = [
+  {
+    title: "The spark",
+    text: "In college, I built a simple site listing products by hand in HTML, then wondered how visitors could add their own listings. That question led me to PHP and a barter-trade site called Swappify, which grew into an OLX-style marketplace, Dealio, that took off across my college.",
+  },
+  {
+    title: "Going deeper",
+    text: "That curiosity pulled me into the MERN stack and REST APIs, then a 24-hour hackathon where I built a job board's backend from scratch. From there I explored real-time systems with Socket.io before picking up React Native with Expo.",
+  },
+  {
+    title: "Into production",
+    text: "I shipped my first production mobile app, then expanded into Next.js and full-stack web development, building HRMS, CRM, and e-commerce features end to end rather than treating the frontend and backend as separate jobs.",
+  },
+  {
+    title: "Systems and AI",
+    text: "I built Actibot, a document Q&A system using pgvector, LangChain, and FastAPI, and started paying closer attention to how the UI, APIs, databases, and infrastructure underneath all fit together as one system.",
+  },
+  {
+    title: "Into infrastructure",
+    text: "A production security incident pushed me into DevOps: Linux, Nginx, CI/CD, and secure server access with Tailscale. I later built Bastion, a self-hosted SSH gateway, from scratch to handle server access properly.",
+  },
+  {
+    title: "Where I'm heading",
+    text: "I'm deepening Docker and Kubernetes now, moving toward platform engineering. I like owning a system end to end not just the parts that are visible.",
+  },
 ];
 
 
@@ -112,7 +132,7 @@ const experienceData = [
   {
     logo: "/images/actify.jpg",
     organization: "Actify Inc",
-    period: "May 2024 to Jul 2026",
+    period: "May 2024 – Present",
     role: "Software Developer",
     description:
       "Full-stack development across React, Next.js, React Native, Node.js, TypeScript, and PostgreSQL. Worked on HRMS, CRM, e-commerce, and admin portals, along with APIs, deployments, and production support on Linux and Azure.",
@@ -198,26 +218,25 @@ export default function Homepage() {
         </div>
 
         {/* Status */}
-        <div className="relative h-40 rounded-lg border border-neutral-400/60 bg-white shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e]">
+        <div className="relative h-40 rounded-lg border border-neutral-400/60 bg-white shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e] overflow-hidden">
           <SectionHeader title="Status" detail="Available" ping />
-          <div className="flex h-full flex-col justify-center px-2 pt-8">
-            <div className="mb-3 flex items-center gap-2 text-xs font-semibold">
-              Open to opportunities and technical collaborations.
+          <div className="flex h-full flex-col justify-between pb-3 pt-10">
+            <div className="px-1">
+              <p className="mt-1.5 text-xs font-sans font-semibold leading-snug text-neutral-900 dark:text-neutral-100">
+                Seeking full-stack roles. Deep frontend experience balanced with capable backend skills.
+              </p>
             </div>
-            <p className="text-[11px] leading-4 text-neutral-500 dark:text-neutral-400">
-              Full-stack, backend-focused, and infrastructure-oriented work.
-            </p>
             <a
               href="#contactMe"
-              className="mt-3 flex w-full cursor-pointer items-center justify-between rounded-full border border-neutral-400/60 px-2 pl-3 py-1 text-xs transition-colors hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-700/40 dark:hover:bg-zinc-700"
+              className="group w-[96%] self-center flex cursor-pointer items-center justify-between rounded-lg bg-neutral-200 px-3 py-2 text-xs font-medium text-black transition-all hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-50 dark:hover:bg-neutral-600"
             >
-              <span>Contact me</span>
-              <PiArrowDown />
+              <span>Let's talk</span>
+              <PiArrowDown className="transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
         </div>
 
-        <About paragraphs={aboutParagraphs} />
+        <About milestones={aboutMilestones} />
 
         {/* Experience and education */}
         <div className="relative h-[340px] overflow-hidden rounded-lg border border-neutral-400/60 bg-white shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e] sm:col-span-2 sm:row-span-2">
@@ -317,9 +336,9 @@ export default function Homepage() {
           </div>
         </div>
 
-        {/* Side projects (Native CSS Scroll instead of Drag) */}
+        {/* Side projects */}
         <div className="relative min-h-[250px] overflow-hidden rounded-lg border border-neutral-400/60 bg-white shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e] sm:col-span-2 sm:row-span-2">
-          <SectionHeader title="Side projects" detail="Scroll to explore" />
+          <SectionHeader title="Legacy projects" detail="Scroll to explore" />
           <div className="flex h-full w-full overflow-x-auto snap-x snap-mandatory scrollbar-thin scrollbar-thumb-accent-foreground scrollbar-track-transparent pt-12 pb-4 px-2">
             {sideProjects.map((project) => (
               <div key={project.title} className="flex h-full w-[85vw] sm:w-[370px] lg:w-[480px] shrink-0 snap-center flex-col items-center justify-center gap-5 px-4">

@@ -25,10 +25,10 @@ export default function SectionHeader({
                 type="button"
                 onClick={onClick}
                 aria-haspopup="dialog"
-                className="inline-flex w-max items-center gap-1 rounded-lg cursor-pointer border border-neutral-400/60 px-2 py-1 text-xs transition-colors hover:bg-slate-100 dark:border-neutral-600 dark:bg-neutral-700/40 dark:hover:bg-zinc-700"
+                className="relative z-50 inline-flex w-max items-center gap-1 rounded-lg cursor-pointer border border-neutral-400/60 px-2 py-1 text-xs transition-colors hover:bg-slate-100 dark:border-neutral-600 dark:bg-neutral-400/40 dark:hover:bg-zinc-700"
               >
                 <span>{actionText}</span>
-                <PiArrowUpRight />
+                <PiArrowUpRight className="pointer-events-none" />
               </button>
             ) : (
               <p className="truncate text-right text-[11px] text-neutral-400">
