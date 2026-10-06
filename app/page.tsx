@@ -216,6 +216,7 @@ export default function Homepage() {
             alt="Map view of Mumbai"
             fill
             priority
+            fetchPriority="high"
             className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[5] group-hover:translate-y-24 group-hover:-translate-x-16"
           />
         </div>
