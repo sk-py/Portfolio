@@ -1,0 +1,34 @@
+# Mubashir Shaikh - Professional Portfolio and Technical Profile
+
+> Full-stack software developer based in Mumbai (Thane), India.
+
+## Background
+Mubashir Shaikh builds production-grade web applications, mobile workflows, APIs, real-time features, and internal tools. He holds a Bachelor of Computer Applications (BCA) degree from Kavikulaguru Kalidas Sanskrit University. He is currently pursuing a Master of Computer Applications (MCA) degree. He is open to software engineering roles in India and the United Arab Emirates.
+
+## Technical Expertise
+- **Frontend:** React.js, Next.js (App Router, Server Components, Server Actions), JavaScript, TypeScript, Tailwind CSS, shadcn/ui.
+- **Mobile Development:** React Native, Expo.
+- **Backend & APIs:** Node.js, Express.js, Python, FastAPI, WebSockets.
+- **Databases & Queues:** PostgreSQL, pgvector (HNSW), MongoDB, MS SQL, Redis, BullMQ.
+- **Infrastructure & Deployment:** Docker, Kubernetes, Linux virtual machines, Nginx reverse proxies, SSL certificates (Certbot), CI/CD automation (GitHub Actions).
+- **Security & Authorization:** Role-Based Access Control (RBAC), JSON Web Tokens (JWT), Argon2id, AES-256-GCM encryption, Cloudflare Turnstile.
+- **AI & RAG:** OpenAI APIs, LangChain, Docling, generative AI tools for visual and audio prompt engineering.
+
+## Professional Experience
+- **Software Developer at Actify Inc (May 2024 – Present):** Built full-stack SaaS applications, HRMS workflows, CRM systems, and e-commerce portals. Managed API development, Azure/Linux deployments, and production support. Implemented geolocation and push notification microservices (VAPID, FCM).
+- **Freelance Web Developer (Short-term):** Delivered client-driven website projects. Collaborated with international teams using WordPress.
+- **Full Stack Development Intern at TCR Innovation (Aug 2023 – Dec 2023):** Developed RESTful APIs. Managed MongoDB data integration.
+
+## Key Projects
+- **Bastion (Open-sourced Aug 2026):** Self-hosted multi-tenant browser SSH gateway and web terminal. Features live shell reattachment, RBAC, encrypted credentials, SFTP, session recording, and streamed file transfers. (Node.js, TypeScript, React, PostgreSQL, WebSockets, Docker).
+- **Actibot:** Document Q&A AI engine. (Python, FastAPI, Node.js, OpenAI embeddings, PostgreSQL with pgvector, LangChain).
+- **Actify GeoTrack:** Production mobile application for HRMS attendance tracking. Features geolocation verification, QR-based attendance, and manager approvals. (React Native, Expo, REST APIs).
+- **Peers:** Real-time event-driven chat application. (React, Node.js, MongoDB, Socket.io).
+- **MoviePass:** Movie seat booking platform. Features live seat availability, MS SQL integration, and QR-based ticket retrieval.
+- **Meshflow:** Job search mobile application consuming RapidAPI data. (React Native, Expo).
+
+## Contact Details
+- **Portfolio Website:** https://skpy.in
+- **GitHub:** https://github.com/sk-py
+- **LinkedIn:** https://www.linkedin.com/in/mubashir-shaikh-/
+- **X (Twitter):** https://twitter.com/shaikh597
