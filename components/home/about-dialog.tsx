@@ -68,6 +68,7 @@ export default function About({ milestones }: { milestones: Milestone[] }) {
             <motion.section
               role="dialog"
               aria-modal="true"
+              aria-labelledby="about-dialog-title"
               className="relative max-h-[80vh] scrollbar-thin sm:scrollbar-thumb-accent-foreground w-full max-w-2xl overflow-y-auto rounded-xl border border-neutral-600 bg-[#1e1e1e] p-5 shadow-2xl"
               initial={{ opacity: 0, y: 18, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -77,7 +78,7 @@ export default function About({ milestones }: { milestones: Milestone[] }) {
               <div className="sticky -top-6 -mx-5  mb-6 flex items-center justify-between border-b border-neutral-700 bg-[#1e1e1e] z-50 px-5 py-4 backdrop-blur">
                 <div>
                   <p className="text-xs text-neutral-400">About</p>
-                  <h2 className="mt-1 text-sm font-semibold text-white">
+                  <h2 id="about-dialog-title" className="mt-1 text-sm font-semibold text-white">
                     From a college HTML page to building infrastructure
                   </h2>
                 </div>
@@ -96,7 +97,7 @@ export default function About({ milestones }: { milestones: Milestone[] }) {
                 {milestones.map((m, i) => (
                   <div key={m.title} className="relative flex gap-3 pb-6 last:pb-0">
                     <div className="relative z-10 flex w-1 shrink-0 justify-center">
-                        <div className="h-1 w-1 rounded-full bg-neutral-100" />
+                      <div className="h-1 w-1 rounded-full bg-neutral-100" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-xs font-semibold text-white">

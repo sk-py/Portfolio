@@ -199,6 +199,7 @@ export default function Homepage() {
   return (
     <div className="relative mx-auto w-full max-w-6xl px-4 pt-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <h1 className="sr-only">Mubashir Shaikh - Full Stack Software Developer Portfolio</h1>
       <div className="grid grid-flow-row-dense grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4">
 
         {/* Location (CSS Hover instead of Framer Motion) */}
@@ -210,10 +211,12 @@ export default function Homepage() {
             </div>
             <div className="mt-1 h-px w-full bg-white/30" />
           </div>
-          <img
-            className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-[3] group-hover:translate-y-20 group-hover:-translate-x-10"
-            src="/images/map.jpg"
+          <Image
+            src="/images/Map.webp"
             alt="Map view of Mumbai"
+            fill
+            priority
+            className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-[5] group-hover:translate-y-24 group-hover:-translate-x-16"
           />
         </div>
 
@@ -258,11 +261,11 @@ export default function Homepage() {
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="flex items-start justify-between gap-3">
-                          <h4 className="text-xs font-bold">{item.organization}</h4>
-                          <span className="shrink-0 text-right text-[10px] text-neutral-400">{item.period}</span>
+                          <h3 className="text-xs dark:text-white text-black font-bold">{item.organization}</h3>
+                          <span className="shrink-0 text-right text-[10px] text-neutral-600 dark:text-neutral-300">{item.period}</span>
                         </div>
-                        <p className="mt-1 text-[11px] font-semibold text-neutral-400">{item.role}</p>
-                        <p className="mt-1 text-[11px] leading-4 text-neutral-500">{item.description}</p>
+                        <p className="mt-1 text-[11px] font-semibold text-neutral-700 dark:text-neutral-200">{item.role}</p>
+                        <p className="mt-1 text-[11px] leading-4 dark:text-neutral-300 text-neutral-600">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -280,14 +283,14 @@ export default function Homepage() {
             {featuredWork.map((project, index) => (
               <div key={project.title} className={`rounded-md bg-[#f5f5f5] px-1 dark:bg-[#1b1b1b] ${index > 0 ? "mt-3" : ""}`}>
                 <Link href={project.link} target="_blank" rel="noreferrer" className="flex items-center gap-3 p-2">
-                  <Image width={56} height={56} className="h-14 w-14 shrink-0 rounded-xl object-contain" src={project.avatar} alt={`${project.title} project icon`} />
+                  <Image width={56} height={56} className="h-14 w-14 shrink-0 rounded-xl object-contain" src={project.avatar} alt={`${project.title} application interface preview`} />
                   <div className="min-w-0 text-left">
                     <div className="flex items-center justify-between gap-2">
-                      <b className="text-xs">{project.title}</b>
+                      <h3 className="text-xs">{project.title}</h3>
                       <PiArrowUpRight className="shrink-0 text-sm text-neutral-400" />
                     </div>
                     <p className="mt-1 text-[11px] leading-4">{project.description}</p>
-                    <p className="mt-1 text-[10px] text-neutral-500">{project.stack}</p>
+                    <p className="mt-1 text-[10px] text-neutral-500 dark:text-neutral-400">{project.stack}</p>
                   </div>
                 </Link>
               </div>
@@ -367,7 +370,7 @@ export default function Homepage() {
 
         {/* Work style */}
         <div className="h-44 rounded-lg border border-neutral-400/60 bg-white p-3 shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e]">
-          <p className="text-xs text-neutral-400">What I build</p>
+          <h2 className="text-xs text-neutral-400">What I build</h2>
           <div className="mt-2 h-px bg-neutral-400/40 dark:bg-neutral-700" />
           <p className="mt-4 text-xs font-semibold leading-5">
             Product-facing web apps, mobile workflows, APIs, real-time features, background services, and internal tools that need to run reliably in production.
@@ -375,7 +378,7 @@ export default function Homepage() {
         </div>
 
         <div className="h-44 rounded-lg border border-neutral-400/60 bg-white p-3 shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e]">
-          <p className="text-xs text-neutral-400">How I work</p>
+          <h2 className="text-xs text-neutral-400">How I work</h2>
           <div className="mt-2 h-px bg-neutral-400/40 dark:bg-neutral-700" />
           <p className="mt-4 text-xs font-semibold leading-5">
             I like owning a feature from data modeling and API design through UI implementation, deployment, production debugging, and the fixes that follow a release.
@@ -398,7 +401,7 @@ export default function Homepage() {
 
             <Link href={"/resume"} className=" flex-1 mt-10 mb-2 relative w-full overflow-hidden rounded border border-neutral-200 dark:border-neutral-700 cursor-pointer">
               <Image
-                src="/images/resume-thumb.jpg"
+                src="/images/resume-thumb.webp"
                 alt="Resume Thumbnail"
                 sizes="auto"
                 fill

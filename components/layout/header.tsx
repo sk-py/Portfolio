@@ -128,9 +128,8 @@ const Header = () => {
       </AnimatePresence>
 
       <nav
-        className={`flex ${
-          path === "/resume" ? "flex-row-reverse" : ""
-        } justify-between items-center w-full px-4 pt-10 max-w-6xl mx-auto`}
+        className={`flex ${path === "/resume" ? "flex-row-reverse" : ""
+          } justify-between items-center w-full px-4 pt-10 max-w-6xl mx-auto`}
       >
         <Link href="/" className="flex gap-x-3 items-center">
           <Image
@@ -138,12 +137,11 @@ const Header = () => {
             height={300}
             className="w-12 h-12 rounded-full object-cover"
             src="/images/profile.png"
-            alt=""
+            alt="Mubashir Shaikh profile photo"
           />
-
           <div>
-            <h4 className="text-xs">Mubashir Shaikh</h4>
-            <p className="text-[#828282] text-xs">Software Developer</p>
+            <p className="text-xs font-bold text-neutral-900 dark:text-neutral-100">Mubashir Shaikh</p>
+            <p className="text-neutral-600 dark:text-neutral-400 text-xs">Software Developer</p>
           </div>
         </Link>
 

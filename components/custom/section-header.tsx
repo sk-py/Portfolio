@@ -17,7 +17,7 @@ export default function SectionHeader({
   return (
     <div className="absolute inset-x-0 top-0 z-20">
       <div className={cn('flex items-center justify-between bg-accent rounded-t-lg gap-3', actionText ? 'px-2 py-1' : 'p-2')}>
-        <p className="text-xs">{title}</p>
+        <h2 className="text-xs font-normal">{title}</h2>
         {detail ? (
           <div className="flex flex-row items-start justify-center gap-1">
             {actionText ? (

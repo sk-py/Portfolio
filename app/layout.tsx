@@ -69,7 +69,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Theming>
           <TooltipProvider>
             <Header />
-            {children}
+            <main>
+              {children}
+            </main>
             <Footer />
           </TooltipProvider>
         </Theming>
