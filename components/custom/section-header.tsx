@@ -31,7 +31,7 @@ export default function SectionHeader({
                 <PiArrowUpRight className="pointer-events-none" />
               </button>
             ) : (
-              <p className="truncate text-right text-[11px] text-neutral-400">
+              <p className="truncate text-right text-[11px] text-neutral-600 dark:text-neutral-400">
                 {detail}
               </p>
             )}

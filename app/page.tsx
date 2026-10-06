@@ -290,7 +290,7 @@ export default function Homepage() {
                       <PiArrowUpRight className="shrink-0 text-sm text-neutral-400" />
                     </div>
                     <p className="mt-1 text-[11px] leading-4">{project.description}</p>
-                    <p className="mt-1 text-[10px] text-neutral-500 dark:text-neutral-400">{project.stack}</p>
+                    <p className="mt-1 text-[10px] text-neutral-600 dark:text-neutral-400">{project.stack}</p>
                   </div>
                 </Link>
               </div>
@@ -370,7 +370,7 @@ export default function Homepage() {
 
         {/* Work style */}
         <div className="h-44 rounded-lg border border-neutral-400/60 bg-white p-3 shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e]">
-          <h2 className="text-xs text-neutral-400">What I build</h2>
+          <h2 className="text-xs text-neutral-600 dark:text-neutral-400">What I build</h2>
           <div className="mt-2 h-px bg-neutral-400/40 dark:bg-neutral-700" />
           <p className="mt-4 text-xs font-semibold leading-5">
             Product-facing web apps, mobile workflows, APIs, real-time features, background services, and internal tools that need to run reliably in production.
@@ -378,7 +378,7 @@ export default function Homepage() {
         </div>
 
         <div className="h-44 rounded-lg border border-neutral-400/60 bg-white p-3 shadow-xl dark:border-neutral-600 dark:bg-[#1e1e1e]">
-          <h2 className="text-xs text-neutral-400">How I work</h2>
+          <h2 className="text-xs text-neutral-600 dark:text-neutral-400">How I work</h2>
           <div className="mt-2 h-px bg-neutral-400/40 dark:bg-neutral-700" />
           <p className="mt-4 text-xs font-semibold leading-5">
             I like owning a feature from data modeling and API design through UI implementation, deployment, production debugging, and the fixes that follow a release.

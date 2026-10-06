@@ -28,7 +28,7 @@ Mubashir Shaikh builds production-grade web applications, mobile workflows, APIs
 - **Meshflow:** Job search mobile application consuming RapidAPI data. (React Native, Expo).
 
 ## Contact Details
-- **Portfolio Website:** https://skpy.in
-- **GitHub:** https://github.com/sk-py
-- **LinkedIn:** https://www.linkedin.com/in/mubashir-shaikh-/
-- **X (Twitter):** https://twitter.com/shaikh597
+- **Portfolio Website:** [skpy.in](https://skpy.in)
+- **GitHub:** [sk-py](https://github.com/sk-py)
+- **LinkedIn:** [Mubashir Shaikh](https://www.linkedin.com/in/mubashir-shaikh-/)
+- **X (Twitter):** [@shaikh597](https://twitter.com/shaikh597)
