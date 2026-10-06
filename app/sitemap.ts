@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/resume`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 2,
+      priority: 0.8,
     },
   ]
 }
