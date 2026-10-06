@@ -405,6 +405,7 @@ export default function Homepage() {
                 alt="Resume Thumbnail"
                 sizes="auto"
                 fill
+                fetchPriority="high"
                 className="object-cover object-top opacity-80 transition-all duration-[1500ms] ease-in-out group-hover:object-bottom group-hover:opacity-100"
               />
             </Link>
